@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\usepackage{fancyhdr}
+
+\newenvironment{problem}[2][]{
+    \begin{trivlist}
+        \item[
+            {\bfseries #1}
+            {\bfseries #2.}
+        ]
+}{\end{trivlist}}
+
+\newcommand{\chaptertitle}{Chapter 1 Units, Physical Quantities, and Vectors}
+\newcommand{\sectiontitle}{\textsc{Section 1.4 Using and Converting Units}}
+\newcommand{\name}{\textsc{Eric Nguyen}}
+
+\pagestyle{fancy}
+\fancyhead[LO]{\sectiontitle}
+\fancyhead[RO]{\textsc{\today} \quad \name}
+\cfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+\newcommand{\solution}{\medskip\noindent\textbf{Solution:}}
+\newcommand{\Part}[1]{\shortintertext{(#1)}}
+
+% UNITS
+\newcommand{\unit}[1]{\, \text{#1}}
+
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\m}{\unit{m}}
+\newcommand{\km}{\unit{km}}
+\newcommand{\ft}{\unit{ft}}
+\newcommand{\inch}{\unit{in.}}
+\newcommand{\mi}{\unit{mi}}
+\newcommand{\gcm}{\unit{g/cm}}
+\newcommand{\mum}{\, \mu \text{m}}
+\newcommand{\mm}{\unit{mm}}
+
+\newcommand{\Liter}{\unit{L}}
+\newcommand{\gallon}{\unit{gallon}}
+\newcommand{\kg}{\unit{kg}}
+\newcommand{\g}{\unit{g}}
+
+\newcommand{\mps}{\unit{m/s}}
+\newcommand{\mpg}{\unit{mpg}}
+\newcommand{\kmL}{\unit{km/L}}
+
+\newcommand{\y}{\unit{y}}
+\newcommand{\ns}{\unit{ns}}
+\newcommand{\s}{\unit{s}}
+\newcommand{\gs}{\unit{gs}}
+
+\newcommand{\ftpns}{\unit{ft/ns}}
+\newcommand{\nspft}{\unit{ns/ft}}
+
+\begin{document}
+
+\begin{problem}{1.1}
+Starting with the definition 1 in. = 2.54 cm, find the number of (a) kilometers in 1.00 mile and (b) feet in 1.00 km
+
+\solution
+\begin{align}
+\Part{a}
+1.00 \mi &= 1.00 \mi \left(\frac{5280 \ft}{1 \mi}\right) \left(\frac{12 \inch}{1 \ft}\right) \left(\frac{2.54 \cm}{1 \inch}\right) \left(\frac{1 \m}{100 \cm}\right) \left(\frac{1 \km}{1000 \m}\right) \approx 1.61 \km
+\Part{b}
+1.00 \km &= 1.00 \km \left(\frac{1000 \m}{1 \km}\right) \left(\frac{100 \cm}{1 \m}\right) \left(\frac{1 \inch}{2.54 \cm}\right) \left(\frac{1 \ft}{12 \inch}\right) \approx 3.28 \times 10^3 \ft
+\end{align}
+\end{problem}
+
+\begin{problem}{1.3}
+How many nanoseconds does it take light to travel 1.00 ft in vacuum? (This result is a useful quantity to remember.)
+
+\solution
+\begin{align}
+299,792,458 \mps &= 299,792,458 \m \left(\frac{3.28084 \ft}{1 \m}\right) \left(\frac{1 \s}{1,000,000,000 \ns}\right) \\
+&\approx 0.98357 \ftpns \approx 1.02 \nspft
+\end{align}
+\end{problem}
+
+\begin{problem}{1.5}
+The most powerful engine available for the classic 1963 Chevrolet Corvette Sting Ray developed 360 horsepower and had a displacement of 327 cubic inches. Express this displacement in liters (L) by only the conversions $1 \Liter = 1000 \cm^3$ and $1 \inch = 2.54 \cm$.
+
+\solution
+\begin{align}
+327 \inch^3 &= 327 \inch^3 \left(\frac{2.54^3 \cm^3}{1 \inch^3}\right) \left(\frac{1 \Liter}{1000 \cm^3}\right) \approx 5.36 \Liter
+\end{align}
+\end{problem}
+
+\begin{problem}{1.7}
+How many years older will you be 1.00 gigasecond from now? (Assume a 365-day year.)
+
+\solution
+\begin{align}
+1.00 \gs &= \left(\frac{10^9 \s}{1 \gs}\right) \left(\frac{1 \y}{3.156 \times 10^7 \s}\right) \approx 31.7 \y
+\end{align}
+\end{problem}
+
+\begin{problem}{1.9}
+A certain fuel-efficient hybrid car gets gasoline mileage of 55.0 mpg (miles per gallon). (a) If you are driving this car in Europe and want to compare its mileage with that of other European cars, express this mileage with that of other European cars, express this mileage in km/L (L = liter). Use the conversion factors in Appendix E. (b) If this car's gas tank holds 45 L, how many tanks of gas will you use to drive 1500 km?
+
+\solution
+\begin{align}
+\Part{a}
+55.0 \mpg &= 55.0 \mpg \left(\frac{1.609 \km}{1 \mi}\right) \left(\frac{1 \gallon}{3.788 \Liter}\right) \approx 23.4 \kmL
+\Part{b}
+\left(23.4 \times 45\right)x &= 1500; \approx 1.4 \unit{tanks}
+\end{align}
+\end{problem}
+
+\begin{problem}{1.11}
+\textbf{Neptunium.} In the fall of 2002, scientists at Los  Alamos National Laboratory determined that the critical mass neptunium-237 is about 60 kg. The critical mass of a fissionable material is the minimum amount that must be brought together to start a nuclear chain reaction. Neptunium-237 has a density of 19.5 g/cm$^3$. What would be the radius of a sphere of this material that has a critical mass?
+
+\solution
+\begin{align}
+19.5 \gcm^3 &= \frac{60 \kg}{V} \\
+V &= \frac{60 \kg \left(\frac{1000 \g}{1 \kg}\right)}{19.5 \gcm^3} \\
+&= \frac{60000}{19.5}\cm^3 \\
+\frac{60000}{19.5} \cm^3 &= \frac{4}{3} \pi r^3 \\
+r^3 &= \frac{60000}{19.5} \left(\frac{3}{4\pi}\right) \cm^3 \\
+r &= \sqrt[3]{\frac{45000}{19.5\pi}} \cm \\
+&\approx 9.0 \cm
+\end{align}
+\end{problem}
+
+\begin{problem}{1.13}
+\textbf{Bacteria.} Bacteria vary in size, but a diameter of 2.0 $\mu$m is not unusual. What are the volume (in cubic centimeters) and surface area (in square millimeters) of a spherical bacterium of that size? (Consult Appendix B for relevant formulas.)
+\begin{align}
+V &= \frac{4}{3} \pi \left(1.0 \mum \left(\frac{1 \cm}{10000 \mum}\right)\right)^3 \\
+&\approx 4.2 \times 10^{-12} \cm^3 \\
+A &= 4 \pi \left(1.0 \mum \left(\frac{1 \mm}{1000 \mum}\right)\right)^2 \\
+&\approx 1.3 \times 10^{-5} \mm^2
+\end{align}
+\end{problem}
+
+\end{document}
