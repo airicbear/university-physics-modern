@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\usepackage{fancyhdr}
+
+\newenvironment{problem}[2][]{
+    \begin{trivlist}
+        \item[
+            {\bfseries #1}
+            {\bfseries #2}
+        ]
+}{\end{trivlist}}
+
+\newcommand{\chaptertitle}{Chapter 1 Units, Physical Quantities, and Vectors}
+\newcommand{\sectiontitle}{\textsc{Section 1.8 Components of Vectors}}
+\newcommand{\name}{\textsc{Eric Nguyen}}
+
+\pagestyle{fancy}
+\chead{\sectiontitle \hfill \textsc{\today} \hfill \name}
+\cfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+\newcommand{\solution}{\medskip\noindent\textbf{Solution:}}
+\newcommand{\Part}[1]{\shortintertext{(#1)}}
+\newcommand{\magnitude}[1]{\lVert #1 \rVert}
+\newcommand{\Vector}[2]{\langle #1, #2 \rangle}
+\newcommand{\UVector}[2]{\left(#1\right)\ihat + \left(#2\right)\jhat}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+
+% UNITS
+\newcommand{\unit}[1]{\, \text{#1}}
+
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\m}{\unit{m}}
+\newcommand{\km}{\unit{km}}
+\newcommand{\ft}{\unit{ft}}
+\newcommand{\inch}{\unit{in.}}
+\newcommand{\mi}{\unit{mi}}
+\newcommand{\gcm}{\unit{g/cm}}
+\newcommand{\mum}{\, \mu \text{m}}
+\newcommand{\mm}{\unit{mm}}
+
+\newcommand{\Liter}{\unit{L}}
+\newcommand{\gallon}{\unit{gallon}}
+\newcommand{\kg}{\unit{kg}}
+\newcommand{\g}{\unit{g}}
+\newcommand{\lb}{\unit{lb}}
+
+\newcommand{\mps}{\unit{m/s}}
+\newcommand{\mpg}{\unit{mpg}}
+\newcommand{\kmL}{\unit{km/L}}
+
+\newcommand{\y}{\unit{y}}
+\newcommand{\mo}{\unit{mo}}
+\newcommand{\ns}{\unit{ns}}
+\newcommand{\s}{\unit{s}}
+\newcommand{\gs}{\unit{gs}}
+\newcommand{\days}{\unit{days}}
+\newcommand{\Day}{\unit{day}}
+\newcommand{\hours}{\unit{hrs}}
+\newcommand{\hour}{\unit{hr}}
+\newcommand{\minutes}{\unit{mins}}
+\newcommand{\minute}{\unit{min}}
+
+\newcommand{\ftpns}{\unit{ft/ns}}
+\newcommand{\nspft}{\unit{ns/ft}}
+
+\begin{document}
+
+\begin{problem}{1.37}
+Write each vector in Fig. E1.24 in terms of the unit vectors $\hat{\imath}$ and $\hat{\jmath}$.
+\begin{align}
+\vec{A} &= \UVector{0}{-8.00} \\
+\vec{B} &= \UVector{7.50}{13.0} \\
+\vec{C} &= \UVector{-10.9}{-5.07} \\
+\vec{D} &= \UVector{-7.99}{6.02}
+\end{align}
+\end{problem}
+
+\begin{problem}{1.39}
+(a) Write each vector in Fig. E1.39 in terms of the unit vectors $\ihat$ and $\jhat$. (b) Use unit vectors to express vector $\vec{C}$, where $\vec{C} = 3.00 \vec{A} - 4.00 \vec{B}$. (c) Find the magnitude and direction of $\vec{C}$.
+\begin{align}
+\shortintertext{Find the components of $\vec{A}$ and $\vec{B}$:\medskip}
+\vec{A}_x &= 3.60 \cos\left(70.0^\circ\right) \approx 1.23 \m \\
+\vec{A}_y &= 3.60 \sin\left(70.0^\circ\right) \approx 3.38 \m \\
+\vec{B}_x &= 2.4 \cos\left(30.0^\circ + 180^\circ\right) \approx -2.08 \m \\
+\vec{B}_y &= 2.4 \sin\left(30.0^\circ + 180^\circ\right) \approx -1.20 \m
+\Part{a}
+\vec{A} &= \UVector{1.23}{3.38} \\
+\vec{B} &= \UVector{-2.08}{-1.20}
+\Part{b}
+\vec{C} &= 3.00 \vec{A} - 4.00 \vec{B} \\
+&= 3.00 \left(\UVector{1.23 \m}{3.38 \m}\right) - 4.00 \left(\UVector{-2.08 \m}{-1.20 \m}\right) \\
+&= 3.69\ihat + 10.14\jhat + 8.32\ihat + 4.8\jhat \\
+&\approx 12.0\ihat + 14.94\jhat
+\Part{c}
+\magnitude{\vec{C}} &= \sqrt{\left(12.0 \m\right)^2 + \left(14.94 \m\right)^2} \approx 19.2 \m \\
+\angle\vec{C} &= \arctan{\left(\frac{14.94 \m}{12.0 \m}\right)} \times \frac{180}{\pi	} \approx 51.2^\circ
+\end{align}
+\end{problem}
+
+\clearpage
+
+\begin{problem}{1.41}
+Given two vectors $\vec{A} = -2.00\ihat + 3.00\jhat + 4.00\hat{k}$ and $\vec{B} = 3.00\ihat + 1.00\jhat - 3.00\hat{k}$, (a) find the magnitude of each vector; (b) use unit vectors to write an expression for the vector difference $\vec{A} - \vec{B}$; and (c) find the magnitude of the vector difference $\vec{A} - \vec{B}$. Is this the same as the magnitude of $\vec{B} - \vec{A}$? Explain.
+\begin{align}
+\Part{a}
+\magnitude{\vec{A}} &= \sqrt{\left(-2.00\right)^2 + \left(3.00\right)^2 + \left(4.00\right)^2} \approx 5.39 \\
+\magnitude{\vec{B}} &= \sqrt{\left(3.00\right)^2 + \left(1.00\right)^2 + \left(-3.00\right)^2} \approx 4.36
+\Part{b}
+\vec{A} - \vec{B} &= \left(-2.00\ihat + 3.00\jhat + 4.00\hat{k}\right) - \left(3.00\ihat + 1.00\jhat - 3.00\hat{k}\right) \\
+&= -5.00\ihat + 2.00\jhat + 7.00\hat{k}
+\Part{c}
+\magnitude{\vec{A} - \vec{B}} &= \sqrt{\left(-5.00\right)^2 + \left(2.00\right)^2 + \left(7.00\right)^2} = 8.83
+\end{align}
+Yes, this is the same as the magnitude of $\vec{B} - \vec{A}$ because every component is squared in the calculation of the magnitude, making any differences in signs irrelevant. 
+
+\medskip
+
+\noindent Verify:
+\begin{align}
+\vec{B} - \vec{A} &= \left(3.00\ihat + 1.00\jhat - 3.00\hat{k}\right) - \left(-2.00\ihat + 3.00\jhat + 4.00\hat{k}\right) \\
+&= 5.00\ihat - 2.00\jhat - 7.00\hat{k} \\
+\magnitude{\vec{B} - \vec{A}} &= \sqrt{\left(5.00\right)^2 + \left(-2.00\right)^2 + \left(-7.00\right)^2} = 8.83
+\end{align}
+\end{problem}
+
+\end{document}
