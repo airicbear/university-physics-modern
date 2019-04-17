@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\usepackage{fancyhdr}
+
+\newenvironment{problem}[2][]{
+    \begin{trivlist}
+        \item[
+            {\bfseries #1}
+            {\bfseries #2}
+        ]
+}{\end{trivlist}}
+
+\newcommand{\chaptertitle}{Chapter 1 Units, Physical Quantities, and Vectors}
+\newcommand{\sectiontitle}{\textsc{Section 1.10 Products of Vectors}}
+\newcommand{\name}{\textsc{Eric Nguyen}}
+
+\pagestyle{fancy}
+\chead{\sectiontitle \hfill \textsc{\today} \hfill \name}
+\cfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+\newcommand{\solution}{\medskip\noindent\textbf{Solution:}}
+\newcommand{\Part}[1]{\shortintertext{(#1)}}
+\newcommand{\magnitude}[1]{\lVert #1 \rVert}
+\newcommand{\Vector}[2]{\langle #1, #2 \rangle}
+\newcommand{\UVector}[2]{\left(#1\right)\ihat + \left(#2\right)\jhat}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+
+% UNITS
+\newcommand{\unit}[1]{\, \text{#1}}
+
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\m}{\unit{m}}
+\newcommand{\km}{\unit{km}}
+\newcommand{\ft}{\unit{ft}}
+\newcommand{\inch}{\unit{in.}}
+\newcommand{\mi}{\unit{mi}}
+\newcommand{\gcm}{\unit{g/cm}}
+\newcommand{\mum}{\, \mu \text{m}}
+\newcommand{\mm}{\unit{mm}}
+
+\newcommand{\Liter}{\unit{L}}
+\newcommand{\gallon}{\unit{gallon}}
+\newcommand{\kg}{\unit{kg}}
+\newcommand{\g}{\unit{g}}
+\newcommand{\lb}{\unit{lb}}
+
+\newcommand{\mps}{\unit{m/s}}
+\newcommand{\mpg}{\unit{mpg}}
+\newcommand{\kmL}{\unit{km/L}}
+
+\newcommand{\y}{\unit{y}}
+\newcommand{\mo}{\unit{mo}}
+\newcommand{\ns}{\unit{ns}}
+\newcommand{\s}{\unit{s}}
+\newcommand{\gs}{\unit{gs}}
+\newcommand{\days}{\unit{days}}
+\newcommand{\Day}{\unit{day}}
+\newcommand{\hours}{\unit{hrs}}
+\newcommand{\hour}{\unit{hr}}
+\newcommand{\minutes}{\unit{mins}}
+\newcommand{\minute}{\unit{min}}
+
+\newcommand{\ftpns}{\unit{ft/ns}}
+\newcommand{\nspft}{\unit{ns/ft}}
+
+\begin{document}
+
+\begin{problem}{1.43}
+For the vectors, $\vec{A}, \vec{B}$, and $\vec{C}$ in Fig. E1.24, find the scalar products (a) $\vec{A} \cdot \vec{B}$; (b) $\vec{B} \cdot \vec{C}$; (c) $\vec{A} \cdot \vec{C}$.
+\begin{align}
+\Part{a}
+\vec{A} \cdot \vec{B} &= \magnitude{A} \magnitude{B} \cos \phi = \left(8.00 \m\right) \left(15.0 \m\right) \cos \left(270^\circ - 60.0^\circ\right) \approx -104 \m^2
+\Part{b}
+\vec{B} \cdot \vec{C} &= \magnitude{B} \magnitude{C} \cos \phi = \left(15.0 \m\right) \left(12.0 \m\right) \cos \left(\left(180^\circ + 25.0^\circ\right) - 60.0^\circ\right) \approx -147 \m^2
+\Part{c}
+\vec{A} \cdot \vec{C} &= \magnitude{A} \magnitude{C} \cos \phi = \left(8.00 \m\right) \left(12.0 \m\right) \cos \left(270^\circ - \left(180^\circ + 25.0^\circ\right)^\circ\right) \approx 40.6 \m^2
+\end{align}
+\end{problem}
+
+\begin{problem}{1.45}
+Find the angle between each of these pairs of vectors:
+
+\medskip
+
+\hangindent=\parindent
+(a) $\vec{A} = -2.00\ihat + 6.00\jhat$ and $\vec{B} = 2.00\ihat - 3.00\jhat$ \\
+(b) $\vec{A} = 3.00\ihat + 5.00\jhat$ and $\vec{B} = 10.00\ihat + 6.00\jhat$ \\
+(c) $\vec{A} = -4.00\ihat + 2.00\jhat$ and $\vec{B} = 7.00\ihat + 14.00\jhat$
+\begin{align}
+\Part{a}
+\cos \phi &= \frac{\vec{A} \cdot \vec{B}}{\magnitude{\vec{A}}\magnitude{\vec{B}}} = \frac{\vec{A}_x\vec{B}_x + \vec{A}_y\vec{B}_y}{\magnitude{\vec{A}}\magnitude{\vec{B}}} \\
+&= \frac{\left(-2.00\right)\left(2.00\right) + \left(6.00\right)\left(-3.00\right)}{\sqrt{\left(-2.00\right)^2 + \left(6.00\right)^2} \sqrt{\left(2.00\right)^2 + \left(-3.00\right)^2}} \approx -0.965 \\
+\phi &= \arccos\left(-0.965\right) \approx 2.88 \times \frac{180}{\pi} \approx 165^\circ
+\Part{b}
+\cos \phi &= \frac{\vec{A} \cdot \vec{B}}{\magnitude{\vec{A}}\magnitude{\vec{B}}} = \frac{\vec{A}_x\vec{B}_x + \vec{A}_y\vec{B}_y}{\magnitude{\vec{A}}\magnitude{\vec{B}}} \\
+&= \frac{\left(3.00\right)\left(10.00\right) + \left(5.00\right)\left(6.00\right)}{\sqrt{\left(3.00\right)^2 + \left(5.00\right()^2} \sqrt{\left(10.00\right)^2 + \left(6.00\right)^2}} \approx 0.882 \\
+\phi &= \arccos\left(0.882\right) \approx 0.490 \times \frac{180}{\pi} \approx 28.1^\circ
+\Part{c}
+\cos \phi &= \frac{\vec{A} \cdot \vec{B}}{\magnitude{\vec{A}}\magnitude{\vec{B}}} = \frac{\vec{A}_x\vec{B}_x + \vec{A}_y\vec{B}_y}{\magnitude{\vec{A}}\magnitude{\vec{B}}} \\
+&= \frac{\left(-4.00\right)\left(7.00\right) + \left(2.00\right)\left(14.00\right)}{\sqrt{\left(-4.00\right)^2 + \left(2.00\right)^2} \sqrt{\left(7.00\right)^2 + \left(14.00\right)^2}} \approx 0.00 \\
+\phi &= \arccos\left(0.00\right) \approx 1.57 \times \frac{180}{\pi} \approx 90.0^\circ
+\end{align}
+\end{problem}
+
+\clearpage
+
+\begin{problem}{1.47}
+For the two vectors $\vec{A}$ and $\vec{D}$ in Fig. E1.24, find the magnitude and direction of (a) the vector product $\vec{A} \times \vec{D}$; (b) the vector product $\vec{D} \times \vec{A}$.
+\begin{align}
+\Part{a}
+\vec{A} \times \vec{D} &= \magnitude{\vec{A}}\magnitude{\vec{D}} \sin \phi \\
+&= \left(-8.00 \m\right) \left(10.0 \m\right) \sin \left(270^\circ - \left(90.0^\circ + 53.0^\circ\right)\right) \approx \left(-63.9 \m^2\right) \hat{k} \\
+\Part{b}
+\vec{D} \times \vec{A} &= \magnitude{\vec{D}}\magnitude{\vec{A}} \sin \phi \\
+&= \left(10.0 \m\right) \left(-8.00 \m\right) \sin \left(\left(90.0^\circ + 53.0^\circ\right) - 270^\circ\right) \approx \left(63.9 \m^2\right) \hat{k}
+\end{align}
+\end{problem}
+
+\end{document}
