@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\usepackage{fancyhdr}
+
+\newenvironment{problem}[2][]{
+    \begin{trivlist}
+        \item[
+            {\bfseries #1}
+            {\bfseries #2}
+        ]
+}{\end{trivlist}}
+
+\newcommand{\chaptertitle}{Chapter 2 Motion Along A Straight Line}
+\newcommand{\sectiontitle}{\textsc{2.1 Displacement, Time, and Average Velocity}}
+\newcommand{\name}{\textsc{Eric Nguyen}}
+
+\pagestyle{fancy}
+\chead{\sectiontitle \hfill \textsc{\today} \hfill \name}
+\cfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+\newcommand{\solution}{\medskip\noindent\textbf{Solution:}}
+\newcommand{\Part}[1]{\shortintertext{(#1)}}
+\newcommand{\magnitude}[1]{\lVert #1 \rVert}
+\newcommand{\Vector}[2]{\langle #1, #2 \rangle}
+\newcommand{\UVector}[2]{\left(#1\right)\ihat + \left(#2\right)\jhat}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+
+% UNITS
+\newcommand{\unit}[1]{\, \text{#1}}
+
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\m}{\unit{m}}
+\newcommand{\km}{\unit{km}}
+\newcommand{\ft}{\unit{ft}}
+\newcommand{\inch}{\unit{in.}}
+\newcommand{\mi}{\unit{mi}}
+\newcommand{\gcm}{\unit{g/cm}}
+\newcommand{\mum}{\, \mu \text{m}}
+\newcommand{\mm}{\unit{mm}}
+
+\newcommand{\Liter}{\unit{L}}
+\newcommand{\gallon}{\unit{gallon}}
+\newcommand{\kg}{\unit{kg}}
+\newcommand{\g}{\unit{g}}
+\newcommand{\lb}{\unit{lb}}
+
+\newcommand{\kmh}{\unit{km/h}}
+\newcommand{\mps}{\unit{m/s}}
+\newcommand{\mpg}{\unit{mpg}}
+\newcommand{\kmL}{\unit{km/L}}
+
+\newcommand{\y}{\unit{y}}
+\newcommand{\mo}{\unit{mo}}
+\newcommand{\ns}{\unit{ns}}
+\newcommand{\s}{\unit{s}}
+\newcommand{\gs}{\unit{gs}}
+\newcommand{\days}{\unit{days}}
+\newcommand{\Day}{\unit{day}}
+\newcommand{\hours}{\unit{hrs}}
+\newcommand{\hour}{\unit{hr}}
+\newcommand{\minutes}{\unit{mins}}
+\newcommand{\minute}{\unit{min}}
+
+\newcommand{\ftpns}{\unit{ft/ns}}
+\newcommand{\nspft}{\unit{ns/ft}}
+
+\begin{document}
+
+\begin{problem}{2.1}
+    A car travels in the $+x$-direction on a straight and level road. For the first 4.00 s of its motion, the average velocity of the car is $v_{\text{av}-x} = 6.25$ m/s. How far does the car travel in 4.00 s?
+    \begin{align}
+        v_{\text{av}-x} &= \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} \\
+        6.25 \ms &= \frac{\Delta x}{4.00 \s - 0.00 \s} \\
+        \Delta x &= 25.0 \m
+    \end{align}
+\end{problem}
+
+\begin{problem}{2.3}
+    \textbf{Trip Home.} You normally drive on the freeway between San Diego and Los Angeles at an average speed of 105 km/h (65 mi/h), and the trip takes 1 h and 50 min. On a Friday afternoon, however, heavy traffic slows you down and you drive the same distance at an average speed of only 70 km/h (43 mi/h). How much longer does the trip take?
+    \begin{align}
+        v_{\tex{av}-x} &= \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} \\
+        105 \kmh &= \frac{\Delta x}{1 \unit{h} \, 50 \min} \\
+        \Delta x &= \left(105 \kmh\right) \left(\frac{11}{6} \unit{h}\right) = 192.5 \km\\
+        70 \kmh &= \frac{192.5 \km}{\Delta t} \\
+        \Delta t &= \frac{192.5 \km}{70 \kmh} = 2.75 \unit{h} \\
+        \Delta\left(\Delta t\right) &= \left(2.75 \unit{h}\right) \left(\frac{60 \min}{1 \unit{h}}\right) - \left(\frac{11}{6} \unit{h}\right)\left(\frac{60 \min}{1 \unit{h}}\right) = 55 \min
+    \end{align}
+\end{problem}
+
+\begin{problem}{2.5}
+    Starting from the front door of a ranch house, you walk 60.0 m due east to a windmill, turn around, and then slowly walk 40.0 m west to a bench, where you sit and watch sunrise. It takes you 28.0 s to walk from the house to the windmill and then 36.0 s to walk from the windmill to the bench, what are your (a) average velocity and (b) average speed?
+    \begin{align}
+        v_{\text{av}-x} &= \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} \\
+        v_{\text{av}-x} &= \frac{20.0 \m}{28.0 \s + 36.0 \s} \approx 0.313 \mps \\
+        s_{\text{av}-x} &= \frac{100.0 \m}{28.0 \s + 36.0 \s} \approx 1.56 \mps
+    \end{align}
+\end{problem}
+
+\end{document}
