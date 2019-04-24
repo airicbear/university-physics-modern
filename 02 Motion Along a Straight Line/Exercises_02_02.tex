@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\usepackage{fancyhdr}
+
+\newenvironment{problem}[2][]{
+    \begin{trivlist}
+        \item[
+            {\bfseries #1}
+            {\bfseries #2}
+        ]
+}{\end{trivlist}}
+
+\newcommand{\chaptertitle}{Chapter 2 Motion Along A Straight Line}
+\newcommand{\sectiontitle}{\textsc{2.2 Instantaneous Velocity}}
+\newcommand{\name}{\textsc{Eric Nguyen}}
+
+\pagestyle{fancy}
+\chead{\sectiontitle \hfill \textsc{\today} \hfill \name}
+\cfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+\newcommand{\solution}{\medskip\noindent\textbf{Solution:}}
+\newcommand{\Part}[1]{\shortintertext{(#1)}}
+\newcommand{\where}{, \, \text{ where }}
+\newcommand{\magnitude}[1]{\lVert #1 \rVert}
+\newcommand{\Vector}[2]{\langle #1, #2 \rangle}
+\newcommand{\UVector}[2]{\left(#1\right)\ihat + \left(#2\right)\jhat}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+
+% UNITS
+\newcommand{\unit}[1]{\, \text{#1}}
+
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\m}{\unit{m}}
+\newcommand{\km}{\unit{km}}
+\newcommand{\ft}{\unit{ft}}
+\newcommand{\inch}{\unit{in.}}
+\newcommand{\mi}{\unit{mi}}
+\newcommand{\gcm}{\unit{g/cm}}
+\newcommand{\mum}{\, \mu \text{m}}
+\newcommand{\mm}{\unit{mm}}
+
+\newcommand{\Liter}{\unit{L}}
+\newcommand{\gallon}{\unit{gallon}}
+\newcommand{\kg}{\unit{kg}}
+\newcommand{\g}{\unit{g}}
+\newcommand{\lb}{\unit{lb}}
+
+\newcommand{\kmh}{\unit{km/h}}
+\newcommand{\mps}{\unit{m/s}}
+\newcommand{\mpg}{\unit{mpg}}
+\newcommand{\kmL}{\unit{km/L}}
+
+\newcommand{\y}{\unit{y}}
+\newcommand{\mo}{\unit{mo}}
+\newcommand{\ns}{\unit{ns}}
+\newcommand{\s}{\unit{s}}
+\newcommand{\gs}{\unit{gs}}
+\newcommand{\days}{\unit{days}}
+\newcommand{\Day}{\unit{day}}
+\newcommand{\hours}{\unit{hrs}}
+\newcommand{\hour}{\unit{hr}}
+\newcommand{\minutes}{\unit{mins}}
+\newcommand{\minute}{\unit{min}}
+
+\newcommand{\ftpns}{\unit{ft/ns}}
+\newcommand{\nspft}{\unit{ns/ft}}
+
+\begin{document}
+
+\begin{problem}{2.7}
+    A car is stopped at a traffic light. It then travels along a straight road such that its distance from the light is given by $x(t) = bt^2 - ct^3$, where $b = 2.40 \mps$^2$ and $c = 0.120 \mps$^3$. (a) Calculate the average velocity of the car for the time interval $t = 0$ to $t = 10.0 \s$. (b) Calculate the instantaneous velocity of the car at $t = 0, t = 5.0 \s$ and $t = 10.0 \s$ (c) How long after starting from rest is the car again at rest?
+
+    \solution
+
+    \begin{align}
+        \Part{a}
+        x_1 &=  x\left(0 \s\right) = \left(2.40 \mps^2\right) \left(0 \s\right)^2 - \left(0.120 \mps^3\right) \left(0 \s\right)^3 = 0 \m \\
+        x_2 &=  x\left(10.0 \s\right) = \left(2.40 \mps^2\right) \left(10.0 \s\right)^2 - \left(0.120 \mps^3\right) \left(10.0 \s\right)^3 = 120 \m \\
+        v_{\text{av-}x} &= \frac{120 \m - 0 \m}{10.0 \s - 0 \s} = 12.0 \mps \\
+        \Part{b}
+        v_x &= \underset{t \to 0}{\lim} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} = \frac{x\left(0.001 \s\right) - x\left(0 \s\right)}{0.001 \s - 0 \s} \approx 0.002 \mps \where t = 0 \s \\
+        &= \underset{t \to 0}{\lim} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} = \frac{x\left(1 \times 10^{-9} \s\right) - x\left(0 \s\right)}{1 \times 10^{-9} \s - 0 \s} \approx 0 \mps \where t = 0 \s \\
+        v_x &= \underset{t \to 0}{\lim} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} =  \frac{x\left(5.001 \s\right) - x\left(5.0 \s\right)}{5.001 \s - 5.0 \s} \approx 15.0 \mps \where t = 5 \s \\
+        v_x &= \underset{t \to 0}{\lim} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} = \frac{x\left(10.001 \s\right) - x\left(10.0 \s\right)}{10.001 \s - 10.0 \s} \approx 12.0 \mps \where t = 10.0 \s
+        \Part{c}
+        v_x &= \frac{dx}{dt} = \frac{d}{dt} \left[\left(2.40 \mps^2\right)t^2 - \left(0.120 \mps^3\right)t^3\right] \\
+        0 \mps &= \left(4.80 \mps^2\right)t - \left(0.360 \mps^3\right)t^2 \\
+        0 \mps &= t \left(4.80 \mps^2 - \left(0.360 \mps^3\right) t\right) \\
+        t &= \frac{-4.80 \mps^2}{-0.360 \mps^3} \approx 13.3 \s
+    \end{align}
+\end{problem}
+
+\begin{problem}{2.9}
+    A ball moves in a straight line (the $x$-axis). The graph in \textbf{Fig. E2.9} shows this ball's velocity as a function of time. (a) What are the ball's average speed and average velocity during the first 3.0 s? (b) Suppose that the ball moved in such a way that the graph segment after 2.0 s was -3.0 m/s instead of +3.0 m/s. Find the ball's average speed and average velocity in this case.
+
+    \solution
+
+    \begin{align}
+        \Part{a}
+        s_{\text{av-}x} &= \frac{|2| + |2| + |3|}{3} = \frac{7}{3} \approx 2.33 \mps \\
+        v_{\text{av-}x} &= \frac{2 + 2 + 3}{3} = \frac{7}{3} \approx 2.33 \mps
+        \Part{b}
+        s_{\text{av-}x} &= \frac{|2| + |2| + |-3|}{3} = \frac{7}{3} \approx 2.33 \mps \\
+        v_{\text{av-}x} &= \frac{2 + 2 - 3}{3} = \frac{1}{3} \approx 0.33 \mps
+    \end{align}
+\end{problem}
+
+\begin{problem}{2.11}
+    A test car travels in a straight line along the $x$-axis. The graph in \textbf{Fig. E2.11} shows the car's position $x$ as a function of time. Find its instantaneous velocity at points $A$ through $G$.
+
+    \solution
+
+    \begin{align}
+        A_{v_x} &= \frac{B_y - A_y}{B_x - A_x} \approx \frac{35 \m - 24 \m}{2.1 \s - 0.4 \s} \approx 6.5 \mps \\
+        B_{v_x} &= A_{v_x} \approx 6.5 \mps \\
+        C_{v_x} &= 0 \mps \\
+        D_{v_x} &= \frac{E_y - D_y}{E_x - D_x} \approx \frac{0 \m - 30 \m}{6 \s - 5.2 \s} \approx -37.5 \mps \\
+        E_{v_x} &= D_{v_x} \approx -37.5 \mps \\
+        F_{v_x} &= E_{v_x} \approx -37.5 \mps \\
+        G_{v_x} &= 0 \mps
+    \end{align}
+\end{problem}
+
+\end{document}
+
